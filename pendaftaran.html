@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Halaman Beranda</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Balqis Amanda">
+    <meta name="nim" content="234311008">
+    <link rel='stylesheet' href="css/main.css">
+    <style>
+    body {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        font: 1em sans-serif;
+        font-family: 'Times New Roman', Times, serif;
+        border: 1px solid black;
+        padding: 5px;
+    }
+    td {
+        border: none;
+    }
+    td:first-child {
+        width: 30%; 
+        white-space: nowrap; 
+    }
+    td:last-child {
+        width: 70%; 
+    }
+    fieldset {
+        width: 40%; 
+        margin: 0 auto; 
+    }
+    legend {
+        font-size: 1.2em; 
+        margin-bottom: 5px; 
+    }
+    .button-container {
+        text-align: center; 
+        margin-top: 20px; 
+    }
+    input[type="submit"],
+    input[type="reset"] {
+        width: auto; 
+        margin: 0 10px; 
+        padding: 10px 20px; 
+        cursor: pointer; 
+    }
+    .hidden-phone {
+        color: transparent; 
+        text-shadow: none; 
+    }
+    </style>
+    </head>
+    <body>
+    <form method="post">
+        <h1> Form Penjadwalan Pertemuan </h1>
+    <fieldset>
+        <legend>Informasi Pribadi</legend>
+        <table width="700px" cellpadding="0">
+            <tr>
+                <td width="500px" nowrap>
+                    <p>Nama<p>
+                </td>
+                <td width="500px" nowrap>
+                    <input type="text" name="nama"required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>No.Telepon</p> 
+                </td>
+                <td width="500px" nowrap>
+                    <input type="text" id="telepon" name="telepon" maxlength="11" oninput="formatTelepon(this)" required>
+                </td>
+            </tr>
+            <tr>
+                <td width="500px" nowrap>
+                    <p>Alamat Email</p>
+                </td>
+                <td width="500px">
+                    <input type="email" name="alamat_email" required>
+                </td>
+            </tr>
+                <td width="500px" nowrap>
+                    <p>Tempat Tanggal Lahir</p>
+                </td>
+                <td width="500px"nowrap>
+                    <input type="date" id="tanggal_lahir" name="tanggal_lahir" min="1987-01-01" max="1993-01-01" required>
+                </td>
+        </table>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Permintaan Pertemuan</legend>
+            <table width="700px" cellpadding="0">
+                <tr>
+                    <td width="500px" nowrap>
+                        <p>Tujuan Pertemuan</p>
+                    </td>
+                    <td>
+                        <input type="text" name="tujuan_pertemuan" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Tingkat Kepentingan</p>
+                    </td>
+                    <td>
+                        <input type="range" id="tingkat_kepentingan" name="tingkat_kepentingan" min="0" max="10" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Tanggal</p>
+                    </td>
+                    <td>
+                        <input type="date" id="tanggal" name="tanggal" min="<?php echo date('Y-m-d', strtotime('+1 day')); ?>" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Waktu</p>
+                    </td>
+                    <td>
+                        <input type="time" id="jam" name="jam" min="17:00" max="21:00" required>
+                    </td>
+                </tr>
+            </table><br>
+        </fieldset>
+        <div class="button-container">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+    </body>
+</html>
