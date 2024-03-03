@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>Halaman Beranda</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Balqis Amanda">
+    <meta name="nim" content="234311008">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header {
+            background-color: #666;
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+        }
+        nav {
+            float: left;
+            width: 30%;
+            height: 460px; 
+            background: #ccc;
+            padding: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        article {
+            float: left;
+            padding: 20px;
+            width: 70%;
+            background-color: #f1f1f1;
+            height: auto;
+        }
+        section::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        footer {
+            background-color: #777;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+        @media (max-width: 600px) {
+            nav, article {
+            width: 100%;
+            height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>HTML5 Advance</h2>
+    </header>
+
+    <section>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gambar.html">Gambar</a></li>
+                <li><a href="event.html">Event</a></li>
+                <li><a href="audio.html">Audio</a></li>
+                <li><a href="video.html">Video</a></li>
+                <li><a href="svg.html">SVG</a></li>
+                <li><a href="canvas.html">Canvas</a></li>
+            </ul>
+        </nav>
+        <article>
+            <h1>Gambar Pemandangan</h1>
+            <img src="gambar/gambar.jpg" style="height: 150px; width: 250px;" alt="gambar pemandangan" onclick="showImageDetails('gambar pemandangan air terjun dengan bukit-bukit')">
+            <img src="gambar/gambar1.jpg" style="height: 150px; width: 250px;" alt="gambar pemandangan" onclick="showImageDetails('gambar pemandangan air terjun dengan pegunungan')">
+            <img src="gambar/gambar2.jpg" style="height: 150px; width: 250px;" alt="gambar pemandangan" onclick="showImageDetails('gambar pemandangan laut dengan senja')">
+            <img src="gambar/gambar4.jpg" style="height: 150px; width: 250px;" alt="gambar pemandangan" ondblclick="showImageDetails('gambar pemandangan pinggir pantai dengan gunung')">
+            <img src="gambar/gambar5.jpg" style="height: 150px; width: 250px;" alt="gambar pemandangan" ondblclick="showImageDetails('gambar pemandangan air mengalir dengan gunung dan rumah')">
+            <img src="gambar/gambar6.jpg" style="height: 150px; width: 250px;" alt="gambar pemandangan" ondblclick="showImageDetails('gambar pemandangan matahari terbenam')">
+            <p id="imageDetails">Klik 1x pada gambar bagian atas dan klik 2x pada gambar bawah untuk mengetahui detail gambar</p>
+        </article>
+</section>
+    <script>
+        function showImageDetails(imageName) {
+            document.getElementById("imageDetails").innerText = "Detail gambar: " + imageName;
+        }
+    </script>
+    <footer>
+        <i>copyright©balqis_234311008</i>
+    </footer>
+</body>
+</html>
